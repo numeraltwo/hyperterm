@@ -66,7 +66,7 @@ header {
 
 .update-indicator {
   background: #7ED321;
-  padding: 6px 14px;
+  padding: 9px 14px;
   color: #fff;
   font: 11px Menlo;
   position: fixed;
@@ -89,6 +89,11 @@ header {
 .update-indicator.showing {
   opacity: 1;
   pointer-events: inherit;
+}
+
+.update-indicator .check-icon {
+  vertical-align: text-bottom;
+  padding-right: 13px;
 }
 
 .icon {

@@ -6,6 +6,8 @@ import classes from 'classnames';
 import shallowCompare from 'react-addons-shallow-compare';
 import React, { Component } from 'react';
 
+import CheckIcon from './assets/check-icon.svg';
+
 export default class HyperTerm extends Component {
   constructor (props) {
     super();
@@ -119,10 +121,11 @@ export default class HyperTerm extends Component {
         <div>{ this.state.cols }x{ this.state.rows }</div>
       </div>
       <div className={classes('update-indicator', { showing: null !== this.state.updateVersion && !this.state.dismissedUpdate })}>
+        <img src={CheckIcon} className='check-icon' />
         Version <b>{ this.state.updateVersion }</b> ready.
         {this.state.updateNote ? ` ${this.state.updateNote}. ` : ' '}
-        <a href='' onClick={this.quitAndInstall}>Restart</a>
-        to apply <span className='close' onClick={this.dismissUpdate}>[x]</span>
+        <a href='' onClick={this.quitAndInstall}>Restart</a> to apply
+        <a className='close' onClick={this.dismissUpdate}> [x]</a>
       </div>
     </div>;
   }
